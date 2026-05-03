@@ -1,0 +1,19 @@
+[Unit]
+Description=Apache Airflow Standalone
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tajani-youssef
+WorkingDirectory=/home/tajani-youssef
+Environment="AIRFLOW_HOME=/home/tajani-youssef/airflow"
+Environment="PATH=/home/tajani-youssef/anaconda3/envs/cal_ag/bin:/home/tajani-youssef/anaconda3/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/home/tajani-youssef/anaconda3/envs/cal_ag/bin/airflow standalone
+Restart=on-failure
+RestartSec=15
+StandardOutput=append:/home/tajani-youssef/airflow/systemd.log
+StandardError=append:/home/tajani-youssef/airflow/systemd.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+Instructions:
+1. Download the JSON file from Google Cloud Console (step above)
+2. Place it in the project root as: gcal_credentials.json
+3. Run the agent (either --dry-run or live)
+4. A browser window will open for OAuth consent
+5. Sign in with: youssef.tajani-etu@etu.univh2c.ma
+6. Grant calendar permissions
+7. The token will be saved automatically as gcal_token.json for future runs

@@ -1,0 +1,22 @@
+# Secrets
+.env
+gcal_token.json
+gcal_credentials.json
+
+# Runtime state
+memory_store.json
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+
+# Airflow (if run from project dir)
+airflow.db
+airflow.cfg
