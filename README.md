@@ -133,7 +133,7 @@ conference_agent/
 ### 1. Clone and create environment
 
 ```bash
-git clone https://github.com/<your-username>/conference_agent.git
+git clone https://github.com/TAJANIYoussef/conf_agent.git
 cd conference_agent
 conda create -n cal_ag python=3.12
 conda activate cal_ag
