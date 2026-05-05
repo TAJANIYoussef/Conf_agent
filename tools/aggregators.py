@@ -30,7 +30,7 @@ AGGREGATOR_FEEDS = [
 ]
 
 # Subject filters — only relevant ML/DM tracks. Drop CV/NLP/RO/SP/HCI.
-RELEVANT_SUBS = {"ML", "DM", "KR", "AI"}
+RELEVANT_SUBS = {"ML", "DM", "KR", "AP"}
 
 _TZ_SUFFIX_RE = re.compile(
     r"\s*\(?(AoE|UTC|GMT|PST|PT|EST|ET|CET|CEST|JST|KST|BST|EDT|PDT)[^\)]*\)?\s*$",

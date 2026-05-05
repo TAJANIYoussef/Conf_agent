@@ -40,6 +40,7 @@ _CURATED_QUERIES = [
     "AutoML 2026 call for papers",
     "DSAA 2026 call for papers data science",
     "BigData 2026 IEEE call for papers",
+    "ICTAI 2026 call for papers IEEE tools artificial intelligence",
 ]
 
 

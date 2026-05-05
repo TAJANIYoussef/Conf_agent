@@ -74,7 +74,7 @@ Each array element MUST match this shape exactly:
 }
 
 SCORING RUBRIC:
-10  → Perfect match: imbalanced tabular data, SMOTE, AutoSMOTE-NC, synthetic data generation
+10  → Perfect match: imbalanced tabular data, SMOTE, synthetic data generation, oversampling
 7-9 → Strong: general ML/AI/data mining (NeurIPS, ICML, ICDM, ECML, AAAI, IJCAI, KDD)
 4-6 → Adjacent: statistics, databases, feature engineering, class imbalance applications
 0-3 → Irrelevant: NLP, CV-only, healthcare-only, non-research events

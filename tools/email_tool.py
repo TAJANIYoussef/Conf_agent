@@ -51,7 +51,7 @@ def build_html_table(conferences: list[Conference]) -> str:
 <body>
   <h2>📅 Conference Deadlines — Weekly Report</h2>
   <p>Found <strong>{len(conferences)}</strong> relevant conferences for your PhD thesis
-  (imbalanced learning, mixed-type tabular data, AutoSMOTE-NC).</p>
+  (imbalanced learning, mixed-type tabular data).</p>
 
   <table>
     <thead>

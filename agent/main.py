@@ -30,19 +30,17 @@ from agent.config import MAX_ITERATIONS
 THESIS_KEYWORDS = [
     "imbalanced learning", "class imbalance", "oversampling", "SMOTE",
     "tabular data", "mixed-type data", "synthetic data generation",
-    "Gumbel-Softmax", "VDM distance", "categorical embeddings",
-    "generative models tabular", "fraud detection machine learning",
+    "categorical embeddings", "generative models tabular",
+    "fraud detection machine learning",
     "medical diagnosis imbalanced", "cybersecurity anomaly detection",
-    "AutoSMOTE", "data augmentation imbalanced classification",
+    "data augmentation imbalanced classification",
 ]
 
 THESIS_ABSTRACT = (
-    "This thesis proposes novel AI and stochastic approaches to address class imbalance in "
+    "This thesis proposes novel AI approaches to address class imbalance in "
     "machine learning, focusing on mixed-type tabular data with continuous and "
-    "categorical features. We introduce AutoSMOTE-NC, a decision-based "
-    "oversampling framework using Gumbel-Softmax relaxation and Value Difference "
-    "Metric distance for categorical feature handling. Applications span fraud "
-    "detection, medical diagnosis, and cybersecurity anomaly detection."
+    "categorical features. Applications span fraud detection, medical diagnosis, "
+    "and cybersecurity anomaly detection."
 )
 
 # User email for authentication
