@@ -39,9 +39,8 @@ THESIS_KEYWORDS = [
 THESIS_ABSTRACT = (
     "This thesis proposes novel AI and stochastic approaches to address class imbalance in "
     "machine learning, focusing on mixed-type tabular data with continuous and "
-    "categorical features. We introduce AutoSMOTE-NC, a decision-based "
-    "oversampling framework using Gumbel-Softmax relaxation and Value Difference "
-    "Metric distance for categorical feature handling. Applications span fraud "
+    "categorical features. We introduce a decision-based "
+    "oversampling framework for categorical feature handling. Applications span fraud "
     "detection, medical diagnosis, and cybersecurity anomaly detection."
 )
 
