@@ -147,18 +147,15 @@ def batch_score_conferences(
                 continue
             conf = Conference(**item)
             logger.debug(f"{idx}. {conf.acronym} score={conf.relevance_score} dates={conf.abstract_deadline or conf.full_paper_deadline or conf.camera_ready_deadline or 'NONE'}")
-            if conf.relevance_score >= RELEVANCE_THRESHOLD:
-                # Must have at least one deadline date
-                if not (conf.abstract_deadline or conf.full_paper_deadline or conf.camera_ready_deadline):
-                    logger.debug(f"  → Skipping {conf.acronym} — no deadline dates available")
-                    continue
-                # All deadlines must be in the future
-                if (conf.full_paper_deadline and conf.full_paper_deadline < today) or \
-                   (conf.camera_ready_deadline and conf.camera_ready_deadline < today):
-                    logger.debug(f"  → Skipping {conf.acronym} — deadline(s) in the past")
-                    continue
-                logger.info(f"  ✓ ACCEPTED: {conf.acronym} {conf.year} (score {conf.relevance_score})")
-                scored.append(conf)
+            if not (conf.abstract_deadline or conf.full_paper_deadline or conf.camera_ready_deadline):
+                logger.debug(f"  → Skipping {conf.acronym} — no deadline dates available")
+                continue
+            if (conf.full_paper_deadline and conf.full_paper_deadline < today) or \
+               (conf.camera_ready_deadline and conf.camera_ready_deadline < today):
+                logger.debug(f"  → Skipping {conf.acronym} — deadline(s) in the past")
+                continue
+            logger.info(f"  ✓ ACCEPTED: {conf.acronym} {conf.year} (score {conf.relevance_score})")
+            scored.append(conf)
         except Exception as e:
             logger.debug(f"Item {idx} validation failed: {e}")
             continue

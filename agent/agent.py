@@ -3,9 +3,8 @@ import logging
 from anthropic import Anthropic
 from agent.models import AgentState, Conference, AgentRunResult
 from agent.config import (MODEL, ANTHROPIC_API_KEY, MAX_ITERATIONS,
-                          QUERIES_PER_ITERATION, MIN_CONFERENCES,
-                          MAX_EMPTY_ITERATIONS, estimate_cost,
-                          EMAIL_FROM, EMAIL_TO, EMAIL_APP_PASSWORD)
+                          QUERIES_PER_ITERATION, MAX_EMPTY_ITERATIONS,
+                          estimate_cost, EMAIL_FROM, EMAIL_TO, EMAIL_APP_PASSWORD)
 from tools.search import ddg_search
 from tools.wikicfp import search_wikicfp
 from tools.relevance import batch_score_conferences, get_total_tokens
@@ -149,13 +148,8 @@ def run_agent(
                 state.found_conferences.append(conf)
                 state.seen_acronyms.add(key)
 
-    # If we already have enough from the aggregator, skip the search loop.
-    if len(state.found_conferences) >= MIN_CONFERENCES:
-        logger.info(f"Aggregator alone yielded {len(state.found_conferences)} — skipping search loop")
-        query_queue: list[str] = []
-    else:
-        logger.info("Generating search queries (1 API call)...")
-        query_queue = _generate_queries(thesis_keywords, summary)
+    logger.info("Generating search queries (1 API call)...")
+    query_queue = _generate_queries(thesis_keywords, summary)
 
     consecutive_empty  = 0
 
@@ -287,10 +281,6 @@ def run_agent(
             if key not in state.seen_acronyms:
                 state.found_conferences.append(conf)
                 state.seen_acronyms.add(key)
-
-        if len(state.found_conferences) >= MIN_CONFERENCES:
-            logger.info(f"  Reached {MIN_CONFERENCES} conferences — stopping early.")
-            break
 
     # ── Send email report ─────────────────────────────────────────────────────
     sorted_confs = sorted(

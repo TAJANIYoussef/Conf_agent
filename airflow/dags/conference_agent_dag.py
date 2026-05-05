@@ -49,7 +49,7 @@ with DAG(
     description="PhD conference finder — weekly email report",
     default_args=default_args,
     schedule_interval="0 9 * * 1",   # every Monday at 09:00
-    start_date=datetime(2026, 5, 4),
+    start_date=datetime(2026, 4, 27),
     catchup=False,
     max_active_runs=1,
     tags=["phd", "research"],
