@@ -39,14 +39,9 @@ THESIS_KEYWORDS = [
 THESIS_ABSTRACT = (
     "This thesis proposes novel AI approaches to address class imbalance in "
     "machine learning, focusing on mixed-type tabular data with continuous and "
-<<<<<<< HEAD
-    "categorical features. Applications span fraud detection, medical diagnosis, "
-    "and cybersecurity anomaly detection."
-=======
     "categorical features. We introduce a decision-based "
     "oversampling framework for categorical feature handling. Applications span fraud "
     "detection, medical diagnosis, and cybersecurity anomaly detection."
->>>>>>> 44b1b95334e8d1ff04a9ebd4f8dae69de89e5f72
 )
 
 # User email for authentication

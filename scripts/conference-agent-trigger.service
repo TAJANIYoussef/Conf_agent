@@ -1,0 +1,10 @@
+[Unit]
+Description=Conference Agent — Monday DAG trigger
+After=airflow.service
+Wants=airflow.service
+
+[Service]
+Type=oneshot
+User=tajani-youssef
+ExecStart=/home/tajani-youssef/Desktop/cal_ag/conference_agent/scripts/monday_trigger.sh
+RemainAfterExit=no

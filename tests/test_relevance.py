@@ -5,8 +5,8 @@ from tools.relevance import batch_score_conferences
 MOCK_RESPONSE = [
     {
         "name": "ICML 2026", "acronym": "ICML", "url": "https://icml.cc",
-        "abstract_deadline": "2026-01-31", "full_paper_deadline": "2026-02-07",
-        "notification_date": "2026-05-01", "venue": "Vienna, Austria",
+        "abstract_deadline": "2026-08-31", "full_paper_deadline": "2026-09-07",
+        "venue": "Vienna, Austria",
         "year": 2026, "relevance_score": 9, "relevance_reason": "Top ML venue"
     }
 ]
@@ -32,9 +32,9 @@ def test_batch_score_returns_conferences():
 
 def test_skips_seen_acronyms():
     result = batch_score_conferences(
-        raw_candidates=[{"acronym": "ICML"}],
+        raw_candidates=[{"acronym": "ICML", "when": "", "deadline": "2026"}],
         thesis_keywords=["imbalanced"],
         thesis_summary="Summary.",
-        seen_acronyms={"ICML"},
+        seen_acronyms={"ICML2026"},
     )
     assert result == []

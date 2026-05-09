@@ -2,6 +2,7 @@
 anthropic>=0.40.0
 pydantic>=2.0
 python-dotenv>=1.0.0
+PyYAML>=6.0.0
 
 # HTTP & scraping
 httpx>=0.27.0
@@ -18,5 +19,10 @@ google-auth-oauthlib>=1.2.0
 pytest>=8.0.0
 pytest-mock>=3.12.0
 
-# Airflow — install separately with constraints (see README.md)
-# apache-airflow==2.9.0
+# Airflow — MUST be installed with the official constraints for Python 3.12.
+# Do NOT pip install apache-airflow directly without constraints (dependency conflicts).
+#
+#   pip install "apache-airflow==2.10.2" \
+#     --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.10.2/constraints-3.12.txt"
+#
+# apache-airflow==2.10.2

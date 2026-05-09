@@ -8,8 +8,8 @@ Type=simple
 User=tajani-youssef
 WorkingDirectory=/home/tajani-youssef
 Environment="AIRFLOW_HOME=/home/tajani-youssef/airflow"
-Environment="PATH=/home/tajani-youssef/anaconda3/envs/cal_ag/bin:/home/tajani-youssef/anaconda3/bin:/usr/local/bin:/usr/bin:/bin"
-ExecStart=/home/tajani-youssef/anaconda3/envs/cal_ag/bin/airflow standalone
+Environment="PATH=/home/tajani-youssef/anaconda3/envs/conference_agent/bin:/home/tajani-youssef/anaconda3/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/home/tajani-youssef/anaconda3/envs/conference_agent/bin/airflow standalone
 Restart=on-failure
 RestartSec=15
 StandardOutput=append:/home/tajani-youssef/airflow/systemd.log

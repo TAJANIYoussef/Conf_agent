@@ -4,7 +4,7 @@ import re
 from datetime import date
 from anthropic import Anthropic
 from agent.config import (MODEL, MAX_TOKENS_PER_CALL, ANTHROPIC_API_KEY,
-                          RELEVANCE_THRESHOLD, SYSTEM_PROMPT, estimate_cost)
+                          RELEVANCE_THRESHOLD, SYSTEM_PROMPT, estimate_cost)  # RELEVANCE_THRESHOLD applied below
 from agent.models import Conference
 
 logger = logging.getLogger(__name__)
@@ -147,6 +147,9 @@ def batch_score_conferences(
                 continue
             conf = Conference(**item)
             logger.debug(f"{idx}. {conf.acronym} score={conf.relevance_score} dates={conf.abstract_deadline or conf.full_paper_deadline or conf.camera_ready_deadline or 'NONE'}")
+            if conf.relevance_score < RELEVANCE_THRESHOLD:
+                logger.debug(f"  → Skipping {conf.acronym} — score {conf.relevance_score} below threshold {RELEVANCE_THRESHOLD}")
+                continue
             if not (conf.abstract_deadline or conf.full_paper_deadline or conf.camera_ready_deadline):
                 logger.debug(f"  → Skipping {conf.acronym} — no deadline dates available")
                 continue

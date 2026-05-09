@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Conference Agent weekly briefing on every boot
+
+[Timer]
+# Fire 2 minutes after every boot (gives Airflow time to start).
+OnBootSec=2min
+# The script itself enforces the 7-day cooldown — safe to fire on every boot.
+Unit=conference-agent-trigger.service
+
+[Install]
+WantedBy=timers.target
